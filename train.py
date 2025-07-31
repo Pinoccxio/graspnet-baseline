@@ -13,15 +13,15 @@ from torch.optim import lr_scheduler
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(ROOT_DIR, 'utils'))
-sys.path.append(os.path.join(ROOT_DIR, 'pointnet2'))
-sys.path.append(os.path.join(ROOT_DIR, 'models'))
-sys.path.append(os.path.join(ROOT_DIR, 'dataset'))
-from graspnet import GraspNet, get_loss
-from pytorch_utils import BNMomentumScheduler
-from graspnet_dataset import GraspNetDataset, collate_fn, load_grasp_labels
-from label_generation import process_grasp_labels
+# ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+# sys.path.append(os.path.join(ROOT_DIR, 'utils'))
+# sys.path.append(os.path.join(ROOT_DIR, 'pointnet2'))
+# sys.path.append(os.path.join(ROOT_DIR, 'models'))
+# sys.path.append(os.path.join(ROOT_DIR, 'dataset'))
+from .models.graspnet import GraspNet, get_loss
+from .pointnet2.pytorch_utils import BNMomentumScheduler
+from .dataset.graspnet_dataset import GraspNetDataset, collate_fn, load_grasp_labels
+from .utils.label_generation import process_grasp_labels
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset_root', required=True, help='Dataset root')
