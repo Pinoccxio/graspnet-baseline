@@ -17,13 +17,15 @@ import torch.nn as nn
 import pytorch_utils as pt_utils
 import sys
 
-try:
-    import builtins
-except:
-    import __builtin__ as builtins
+# try:
+#     import builtins
+# except:
+#     import __builtin__ as builtins
+import builtins
 
 try:
-    import pointnet2._ext as _ext
+    # import pointnet2._ext as _ext
+    from pointnet2 import _ext_src as _ext
 except ImportError:
     if not getattr(builtins, "__POINTNET2_SETUP__", False):
         raise ImportError(
